@@ -24,7 +24,8 @@
     <input type="text" class="form-control" v-model="criterioDeBusquedaDNI" placeholder="Ingresar un DNI ...">
     <span class="badge badge-light mb-4">Caracteres ingresados : {{ getCaracteres3()}}</span>
     <div class="alert alert-danger h-25" v-if="validarCaracteres()">
-        <p style="margin: 0px;">Debe ingresar mas de 3 caracteres </p>
+        <p style="margin: 0px;">Debe ingresar mas de 3 caracteres en cada campo
+        </p>
     </div>
     <br>
     <div class="card-deck m-0">
@@ -109,7 +110,7 @@
 
             },
             validarCaracteres() {
-                if (this.criterioDeBusqueda.length >= 3) {
+                if (this.criterioDeBusqueda.length >= 3 && this.criterioDeBusquedaPorNyA.length >= 3 && this.criterioDeBusquedaDNI.length >= 3) {
                     return false
                 }
                 return true
