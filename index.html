@@ -16,13 +16,13 @@
 <div class="container-fluid mt-3" id="app">
     <input type="text" id="input1" class="form-control " v-model="criterioDeBusqueda"
         placeholder="Ingresar un criterio de busqueda...">
-    <span class="badge badge-light mb-4">Caracteres ingresados : {{ getCaracteres()}}</span>
+    <span class="badge badge-light mb-4">Caracteres ingresados : {{ this.criterioDeBusqueda.length}}</span>
     <input type="text" class="form-control" v-model="criterioDeBusquedaPorNyA"
         placeholder="Ingresar un Nombre o Apellido">
-    <span class="badge badge-light mb-4">Caracteres ingresados : {{ getCaracteres1()}}</span>
+    <span class="badge badge-light  mb-4 ">Caracteres ingresados : {{ this.criterioDeBusquedaPorNyA.length}}</span>
 
     <input type="text" class="form-control" v-model="criterioDeBusquedaDNI" placeholder="Ingresar un DNI ...">
-    <span class="badge badge-light mb-4">Caracteres ingresados : {{ getCaracteres3()}}</span>
+    <span class="badge badge-light mb-4">Caracteres ingresados : {{ this.criterioDeBusquedaDNI.length}}</span>
     <div class="alert alert-danger h-25" v-if="validarCaracteres()">
         <p style="margin: 0px;">Debe ingresar mas de 3 caracteres en cada campo
         </p>
@@ -115,15 +115,6 @@
                 }
                 return true
             },
-            getCaracteres() {
-                return this.criterioDeBusqueda.length
-            },
-            getCaracteres1() {
-                return this.criterioDeBusquedaPorNyA.length
-            },
-            getCaracteres3() {
-                return this.criterioDeBusquedaDNI.length
-            }
         }
     });
 </script>
